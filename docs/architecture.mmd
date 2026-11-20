@@ -1,0 +1,11 @@
+flowchart TD
+    A[User uploads a PDF in Streamlit] --> B[PDF loader]
+    B --> C[RecursiveCharacterTextSplitter]
+    C --> D[Jina Embeddings v3 API]
+    D --> E[(ChromaDB: invoice_collection)]
+    Q[User asks a question] --> R[Jina query embedding]
+    R --> S[Chroma retriever: similarity or MMR]
+    E --> S
+    S --> P[Retrieved PDF context + question]
+    P --> L[Groq LLM: gpt-oss-20b]
+    L --> O[Answer in Streamlit]

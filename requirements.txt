@@ -1,0 +1,10 @@
+# Core app dependencies; verify and pin versions against your working .venv.
+streamlit
+python-dotenv
+langchain-core
+langchain-groq
+langchain-chroma
+langchain-text-splitters
+langchain-community
+pypdf
+pymupdf
